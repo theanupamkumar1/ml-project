@@ -3,3 +3,8 @@ pandas
 flask
 python-dotenv
 pymongo
+seaborn
+matplotlib
+scikit-learn
+catboost
+xgboost
