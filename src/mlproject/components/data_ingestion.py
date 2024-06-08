@@ -1,5 +1,6 @@
 import os
 import sys
+import pandas as pd
 from src.mlproject.exception.exception import CustomException
 from src.mlproject.exception.logger import logging
 import pandas as pd
