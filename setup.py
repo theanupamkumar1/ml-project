@@ -17,5 +17,5 @@ setup(
     description="An end-to-end ML project",
     author="Anupma Kumar",
     packages=find_packages(),
-    install_requires=get_req('requirments.txt')
+    install_requires=get_req('requirements.txt')
 )
