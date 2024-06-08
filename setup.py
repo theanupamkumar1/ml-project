@@ -1,27 +1,21 @@
-from setuptools import setup,find_packages
-
-
-
+from setuptools import setup, find_packages
 from typing import List
 
-def get_req(file_path:str)->List[str]:
-    req=[]
-    with open(file_path) as f:
-        req=f.readlines()
-        req=[r.replace('/n',"") for r in req]
+hypen_e_dot = "-e ."
+
+def get_req(file_path: str) -> List[str]:
+    req = []
+    with open(file_path, 'r', encoding='utf-8') as f:
+        req = f.readlines()
+        req = [r.strip() for r in req]
+        if hypen_e_dot in req:
+            req.remove(hypen_e_dot)
     return req
 
-
-
-
-
-
 setup(
-
-name="ml project",
-description=" an end to end ml project",
-author="anupma kumar",
-packages=find_packages(),
-requires=get_req('requirments.txt')    
-
+    name="ml_project",
+    description="An end-to-end ML project",
+    author="Anupma Kumar",
+    packages=find_packages(),
+    install_requires=get_req('requirments.txt')
 )

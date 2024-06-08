@@ -18,7 +18,8 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
 
-# from src.mlproject.exception import CustomException
+from src.mlproject.exception.exception import CustomException
+# from exception.logger import logging
 from src.mlproject.exception.logger import logging
 from src.mlproject.exception.utils import save_object,evaluate_models
 
@@ -166,4 +167,4 @@ class ModelTrainer:
 
 
         except Exception as e:
-            raise e
+            raise CustomException(e,sys)

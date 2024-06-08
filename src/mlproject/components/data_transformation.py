@@ -10,7 +10,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 # sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# from src.mlproject.exception import CustomException
+from src.mlproject.exception.exception import CustomException
 from src.mlproject.exception.logger import logging
 from src.mlproject.exception.utils import save_object
 
@@ -62,7 +62,7 @@ class DataTransformation:
             return preprocessor
 
         except Exception as e:
-            raise e
+            raise CustomException(e,sys)
         
 
 
@@ -117,4 +117,4 @@ class DataTransformation:
     
 
         except Exception as e :
-            raise e
+           raise CustomException(e,sys)
