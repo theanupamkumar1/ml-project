@@ -19,6 +19,27 @@ app=application
 
 ## Route for a home page
 
+try:
+    
+    data_ingetion= DataIngestion()
+    train_data_path, test_data_path =data_ingetion.initiate_data_ingestion()
+
+    data_transformation = DataTransformation()
+    train_arr, test_arr, _=data_transformation.initiate_data_transormation(train_data_path, test_data_path )
+
+    model_trainer=ModelTrainer()
+    print(model_trainer.initiate_model_trainer( train_arr,test_arr))
+
+    
+    
+
+
+except Exception as e:
+    raise CustomException(e,sys)
+
+
+
+
 @app.route('/')
 def index():
     return render_template('index.html') 
@@ -44,7 +65,7 @@ def predict_datapoint():
 
         predict_pipeline=PredictPipeline()
         print("Mid Prediction")
-
+        
         results=predict_pipeline.predict(pred_df)
         print("after Prediction")
         logging.info("predicted result using web-interface")
@@ -75,25 +96,8 @@ def predict_using_api():
 
 
 if __name__=="__main__":
-    app.run( )      
+    app.run(host="0.0.0.0")      
 
 
 
 
-# try:
-    
-#     data_ingetion= DataIngestion()
-#     train_data_path, test_data_path =data_ingetion.initiate_data_ingestion()
-
-#     data_transformation = DataTransformation()
-#     train_arr, test_arr, _=data_transformation.initiate_data_transormation(train_data_path, test_data_path )
-
-#     model_trainer=ModelTrainer()
-#     print(model_trainer.initiate_model_trainer( train_arr,test_arr))
-
-    
-    
-
-
-# except Exception as e:
-#     raise CustomException(e,sys)
