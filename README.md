@@ -74,3 +74,6 @@ The `requirements.txt` file lists the Python packages that your project depends 
 ## Source Code
 
 The `src` directory contains the source code of your application. It includes various components such as data ingestion, data transformation, and model training.
+
+## link 
+https://math-score-prediction-1-b3h8ggc3gchydzaz.eastus-01.azurewebsites.net/
