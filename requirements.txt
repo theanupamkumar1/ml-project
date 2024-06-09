@@ -149,18 +149,15 @@
 
 # -e .
 
-Flask
-numpy
 pandas
-matplotlib
-scikit-learn
-scipy
-requests
-mlflow
-xgboost
-catboost
+flask
+python-dotenv
 pymongo
-seaborn
-joblib
+scikit-learn
+dill
+mlflow
+catboost
+xgboost
+dvc
 
 -e .
